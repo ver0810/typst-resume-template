@@ -2,6 +2,9 @@
 
 专为技术研发人员（后端、全栈、算法、Agent / AI 应用开发）设计的高信息密度、现代化、抗视觉疲劳的 Typst 单页简历模板。
 
+> [!NOTE] 致谢与开源参考
+> 本项目参考并衍生自开源项目 [habaneraa/typst-resume-one-page](https://github.com/habaneraa/typst-resume-one-page)，在此对原作者表示诚挚感谢！本项目在此基础上针对现代技术岗位需求，进一步重构了微徽章标题横幅、三级防疲劳灰度色彩、动态紧凑度因子（`element-spaciness`）及中英文（思源宋体 + Palatino）优雅混排机制。
+
 ---
 
 ## 效果预览
@@ -44,23 +47,36 @@ resume-template/
 
 ## 快速开始
 
-### 1. 安装 Typst
+### 推荐方式：VS Code + Tinymist 插件（所见即所得）
 
-Typst 是极速、现代的排版引擎：
+使用 VS Code 搭配官方社区主流插件 **Tinymist** 是体验最佳的 Typst 编辑工作流：
+
+1. **安装插件**：在 VS Code 插件市场搜索并安装 `Tinymist Typst`（插件 ID: `myriad-dreamit.tinymist`）。
+2. **打开项目**：在 VS Code 中打开本仓库根目录。
+3. **实时预览与导出**：
+   - 打开 `examples/resume-zh.typ` 文件；
+   - 点击编辑器右上角的「打开预览」图标（或使用快捷键 `Ctrl+K V` / `Cmd+K V`），即可在右侧开启毫秒级热重载预览窗口；
+   - 在预览窗口右上角点击导出按钮，或使用命令面板（`Ctrl+Shift+P`）输入 `Tinymist: Export Current Document as PDF` 即可导出 PDF。
+
+---
+
+### 备用方式：CLI 命令行
+
+适合终端爱好者或自动化 CI/CD 流水线：
+
+#### 1. 安装 Typst CLI
 
 - **macOS (Homebrew)**: `brew install typst`
 - **Windows (Winget)**: `winget install --id Typst.Typst`
-- **Linux / Arch**: `pacman -S typst` 或从 [GitHub Releases](https://github.com/typst/typst/releases) 下载二进制文件放入系统 PATH。
+- **Linux / Arch**: `pacman -S typst` 或从 [GitHub Releases](https://github.com/typst/typst/releases) 下载二进制放入系统 PATH。
 
-### 2. 实时预览与开发
-
-在项目根目录下启动监听模式，保存文件后秒级热重载：
+#### 2. 实时监听开发
 
 ```bash
 typst watch --root . --font-path ./fonts examples/resume-zh.typ
 ```
 
-### 3. 导出编译为 PDF
+#### 3. 导出编译为 PDF
 
 ```bash
 typst compile --root . --font-path ./fonts examples/resume-zh.typ examples/resume-zh.pdf
