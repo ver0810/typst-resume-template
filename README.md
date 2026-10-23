@@ -1,9 +1,10 @@
-# Modern Typst Resume (单页工程师简历模板)
+# Modern Typst Resume
 
-专为技术研发人员（后端、全栈、算法、Agent / AI 应用开发）设计的高信息密度、现代化、抗视觉疲劳的 Typst 单页简历模板。
+专为技术研发人员的 Typst 单页简历模板， 简洁高效。
 
-> [!NOTE] 致谢与开源参考
-> 本项目参考并衍生自开源项目 [habaneraa/typst-resume-one-page](https://github.com/habaneraa/typst-resume-one-page)，在此对原作者表示诚挚感谢！本项目在此基础上针对现代技术岗位需求，进一步重构了标题横幅及中英文（思源宋体 + Palatino）字体。
+> [!NOTE]
+> 致谢与开源参考
+> 本项目参考自开源项目 [habaneraa/typst-resume-one-page](https://github.com/habaneraa/typst-resume-one-page)，在此对原作者表示诚挚感谢！本项目在此基础上针对现代技术岗位需求，进一步重构了标题横幅及中英文（思源宋体 + Palatino）字体。
 
 ---
 
@@ -92,7 +93,8 @@ typst compile --root . --font-path ./fonts examples/resume-zh.typ examples/resum
 - 确保电脑上已经下载了相关的字体
 
 
-> [!Info] 最后祝大家能够顺利找到工作！
+> [!NOTE]
+> 最后祝大家能够顺利找到工作！
 
 ## 开源协议
 
