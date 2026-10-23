@@ -1,11 +1,14 @@
 #import "@preview/nerd-icons:0.2.0": nf-icon
 
-// 默认中英文混排字体链：英文优先匹配 Palatino，中文回退匹配思源宋体
+// 默认中英文混排字体链：英文优先匹配 Palatino，中文回退匹配思源宋体（Noto Serif SC）
 #let default-font-chain = (
   "Palatino Linotype",
   "Palatino",
-  "Source Han Serif SC",
   "Noto Serif SC",
+  "Source Han Serif SC",
+  "Noto Serif CJK SC",
+  "Songti SC",
+  "SimSun",
 )
 
 #let setup-styles(

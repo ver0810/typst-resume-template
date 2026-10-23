@@ -52,7 +52,12 @@ resume-template/
 使用 VS Code 搭配官方社区主流插件 **Tinymist** 是体验最佳的 Typst 编辑工作流：
 
 1. **安装插件**：在 VS Code 插件市场搜索并安装 `Tinymist Typst`（插件 ID: `myriad-dreamit.tinymist`）。
-2. **打开项目**：在 VS Code 中打开本仓库根目录。
+2. **克隆项目并且打开**：首先先clone该项目，在 VS Code 中打开本仓库根目录。
+```bash
+git clone https://github.com/ver0810/typst-resume-template.git
+
+cd typst-resume-template/
+```
 3. **实时预览与导出**：
    - 打开 `examples/resume-zh.typ` 文件；
    - 点击编辑器右上角的「打开预览」图标（或使用快捷键 `Ctrl+K V` / `Cmd+K V`），即可在右侧开启毫秒级热重载预览窗口；
@@ -82,40 +87,7 @@ typst watch --root . --font-path ./fonts examples/resume-zh.typ
 typst compile --root . --font-path ./fonts examples/resume-zh.typ examples/resume-zh.pdf
 ```
 
----
 
-## 配置参数速查
-
-通过调用 `#let (resume-header, resume-entry) = setup-styles(...)` 定制全局风格：
-
-| 参数名 | 默认值 | 说明 |
-| :--- | :--- | :--- |
-| `accent-color` | `rgb("#2563EB")` | 主题色（标题文字、加粗关键词、链接高亮） |
-| `heading-bg-color` | `rgb("#EDF4FC")` | 标题栏横幅背景色（传入 `none` 则为透明无背景） |
-| `heading-bar-color` | `auto` | 标题左侧垂直色块颜色（`auto` 自动同步 `accent-color`） |
-| `text-color` | `rgb("#0F172A")` | 姓名、大标题、经历名称等一级重点文字颜色 |
-| `body-color` | `rgb("#334155")` | 正文字体颜色（抗视觉疲劳深灰） |
-| `meta-color` | `rgb("#64748B")` | 副标题、时间日期、联系方式等次要文字颜色 |
-| `font-family` | 见下方字体配置 | 全局字体回退链（默认中文思源宋体，英文 Palatino） |
-| `font-size` | `10pt` | 全局正文字号基准（推荐单页设置为 `9.5pt ~ 10.2pt`） |
-| `element-spaciness` | `1.00` | 垂直紧凑度系数（如内容偏多可设为 `0.95`，偏少设为 `1.05`） |
-| `heading-radius` | `0pt` | 标题左侧竖条圆角（硬朗直角设为 `0pt`，微圆角可设为 `1.5pt`） |
-| `margin` | `(x: 1.2cm, y: 1.2cm)` | 页面基准边距 |
-
----
-
-## 推荐配色方案
-
-可根据个人喜好或求职岗位切换不同配色方案：
-
-| 配色风格 | `accent-color` | `heading-bg-color` | 适用岗位 / 视觉特点 |
-| :--- | :--- | :--- | :--- |
-| **现代科技蓝 (默认)** | `rgb("#2563EB")` | `rgb("#EDF4FC")` | 后端开发、分布式架构、AI / Agent 工程师 |
-| **经典工程蓝** | `rgb("#1E88E5")` | `rgb("#EBF3FB")` | 稳重干练、传统名企 / 国企 / 大厂通用 |
-| **极简石板黑** | `rgb("#334155")` | `rgb("#F1F5F9")` | 算法研究、科研助理、极简性冷淡风 |
-| **深林墨绿** | `rgb("#0F766E")` | `rgb("#F0FDFA")` | 全栈开发、数据工程、低调沉稳 |
-
----
 
 ## 优雅的中英文字体混排
 
