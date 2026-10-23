@@ -1,5 +1,13 @@
 #import "@preview/nerd-icons:0.2.0": nf-icon
 
+// 默认中英文混排字体链：英文优先匹配 Palatino，中文回退匹配思源宋体
+#let default-font-chain = (
+  "Palatino Linotype",
+  "Palatino",
+  "Source Han Serif SC",
+  "Noto Serif SC",
+)
+
 #let setup-styles(
   // 配色方案（支持默认或自定义）
   accent-color: rgb("#2563EB"),        // 主色调（标题文字、强调高亮、链接）
@@ -10,10 +18,11 @@
   meta-color: rgb("#64748B"),          // 次要信息颜色（副标题、时间、联系方式 Slate-500）
   background-color: rgb("#ffffff"),    // 页面背景色
   
-  // 字体配置
-  sans-serif-font: ("Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "SimHei"),
-  serif-font: ("Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun"),
-  alt-font: ("Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei"),
+  // 字体配置：中文使用思源宋体，英文使用 Palatino
+  font-family: default-font-chain,
+  serif-font: default-font-chain,
+  sans-serif-font: default-font-chain,
+  alt-font: default-font-chain,
   
   // 排版控制
   font-size: 10pt,                     // 基准字号
@@ -54,14 +63,14 @@
     
     set par(
       justify: true,
-      leading: 0.52em * element-spaciness,
+      leading: 0.54em * element-spaciness,
       spacing: 0.85em * element-spaciness,
     )
 
     set text(
       font: (
         (name: "New Computer Modern", covers: regex("•")),
-        sans-serif-font,
+        font-family,
       ).flatten(),
       lang: "zh",
       size: font-size,
@@ -100,7 +109,7 @@
           h(0.45em)
           // 3. 标题文字
           text(
-            font: sans-serif-font,
+            font: font-family,
             weight: "bold",
             size: 1.05em,
             fill: accent-color,
@@ -154,7 +163,7 @@
       width: 100%,
       inset: (bottom: 0.2em * element-spaciness),
       {
-        text(font: sans-serif-font, weight: 800, size: 2.1em, fill: text-color, author)
+        text(font: font-family, weight: 800, size: 2.1em, fill: text-color, author)
         linebreak()
         v(0.25em * element-spaciness)
         if basic-info.len() > 0 {
@@ -176,13 +185,13 @@
     body
   ) = {
     // 条目首行（主标题 + 副标题 + 时间）
-    text(font: sans-serif-font, weight: "bold", fill: text-color, title)
+    text(font: font-family, weight: "bold", fill: text-color, title)
     if subtitle != "" {
-      text(font: alt-font, fill: meta-color, separator + subtitle)
+      text(font: font-family, fill: meta-color, separator + subtitle)
     }
     if date != "" {
       h(1fr)
-      text(font: alt-font, fill: meta-color, date)
+      text(font: font-family, fill: meta-color, date)
     }
     
     // 条目详细内容列表

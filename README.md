@@ -80,6 +80,7 @@ typst compile --root . --font-path ./fonts examples/resume-zh.typ examples/resum
 | `text-color` | `rgb("#0F172A")` | 姓名、大标题、经历名称等一级重点文字颜色 |
 | `body-color` | `rgb("#334155")` | 正文字体颜色（抗视觉疲劳深灰） |
 | `meta-color` | `rgb("#64748B")` | 副标题、时间日期、联系方式等次要文字颜色 |
+| `font-family` | 见下方字体配置 | 全局字体回退链（默认中文思源宋体，英文 Palatino） |
 | `font-size` | `10pt` | 全局正文字号基准（推荐单页设置为 `9.5pt ~ 10.2pt`） |
 | `element-spaciness` | `1.00` | 垂直紧凑度系数（如内容偏多可设为 `0.95`，偏少设为 `1.05`） |
 | `heading-radius` | `0pt` | 标题左侧竖条圆角（硬朗直角设为 `0pt`，微圆角可设为 `1.5pt`） |
@@ -97,6 +98,23 @@ typst compile --root . --font-path ./fonts examples/resume-zh.typ examples/resum
 | **经典工程蓝** | `rgb("#1E88E5")` | `rgb("#EBF3FB")` | 稳重干练、传统名企 / 国企 / 大厂通用 |
 | **极简石板黑** | `rgb("#334155")` | `rgb("#F1F5F9")` | 算法研究、科研助理、极简性冷淡风 |
 | **深林墨绿** | `rgb("#0F766E")` | `rgb("#F0FDFA")` | 全栈开发、数据工程、低调沉稳 |
+
+---
+
+## 优雅的中英文字体混排
+
+模板原生采用“**西文字体在前，中文字体在后**”的声明机制：
+- **英文字符与阿拉伯数字**：优先由优雅经典的衬线体 **Palatino**（`Palatino Linotype` / `Palatino`）渲染；
+- **中文字符**：Palatino 缺字时自动优雅回退至权威的开源衬线体 **思源宋体**（`Source Han Serif SC` / `Noto Serif SC`）。
+
+```typst
+#let (resume-header, resume-entry) = setup-styles(
+  font-family: ("Palatino Linotype", "Palatino", "Source Han Serif SC", "Noto Serif SC"),
+  // ... 其他配置
+)
+```
+
+本地编译时推荐携带 `--font-path ./fonts` 参数以确保字体加载完整。
 
 ---
 

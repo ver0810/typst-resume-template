@@ -7,6 +7,8 @@
   text-color: rgb("#0F172A"),          // Slate-900 深灰黑
   body-color: rgb("#334155"),          // Slate-700 正文
   meta-color: rgb("#64748B"),          // Slate-500 次要信息
+  // 中文使用思源宋体，英文使用 Palatino
+  font-family: ("Palatino Linotype", "Palatino", "Source Han Serif SC", "Noto Serif SC"),
   font-size: 9.8pt,                    // 单页高密度基准字号
   element-spaciness: 0.98,             // 紧凑度微调因子（确保完美单页）
 )
