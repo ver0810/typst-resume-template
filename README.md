@@ -19,7 +19,7 @@
   - 次级元信息（时间、副标题、联系方式）：中灰 (`#64748B`)，主次分明。
 - **单页严丝合缝控制（Dynamic Spacing）**：提供 `element-spaciness` 全局间距缩放系数，无需繁琐调整各个容器 margin，微调参数（如 `0.95 ~ 1.05`）即可让内容严丝合缝卡在单页 A4 纸内。
 - **现代化图标支持**：内置 `@preview/nerd-icons:0.2.0` 图标库，电话、邮箱、GitHub、主页等联系方式自动排版。
-- **开箱即用**：自带脱敏的高质量技术岗示例，覆盖教育背景、高并发/微服务实习经历、Agent 核心项目与技能清单。
+- **开箱即用（三体 · 罗辑示例）**：内置《三体》面壁者/执剑人罗辑的经典简历示例，极客趣味与硬核结构兼备，生动展示单页高信息密度的排版效果。
 
 ---
 
@@ -29,10 +29,11 @@
 resume-template/
 ├── resume-template.typ    # 核心模板函数库 (setup-styles, resume-header, resume-entry)
 ├── examples/
-│   ├── resume-zh.typ      # 单页中文示例简历源码
+│   ├── resume-zh.typ      # 单页中文示例（三体 · 罗辑）
+│   ├── luoji.typ          # 同步示例镜像
 │   └── resume-zh.pdf      # 编译产物 PDF
 ├── assets/
-│   ├── avatar.png         # 示例头像占位图
+│   ├── avatar.png         # 罗辑头像占位图
 │   └── preview.png        # 效果预览图
 ├── fonts/                 # 本地备用 Nerd Font 符号字体
 ├── LICENSE                # MIT 开源协议
