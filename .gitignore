@@ -1,0 +1,19 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Typst build artifacts / local scratch files
+*.local.typ
+*.private.*
+*.tmp
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*~
