@@ -3,7 +3,7 @@
 专为技术研发人员（后端、全栈、算法、Agent / AI 应用开发）设计的高信息密度、现代化、抗视觉疲劳的 Typst 单页简历模板。
 
 > [!NOTE] 致谢与开源参考
-> 本项目参考并衍生自开源项目 [habaneraa/typst-resume-one-page](https://github.com/habaneraa/typst-resume-one-page)，在此对原作者表示诚挚感谢！本项目在此基础上针对现代技术岗位需求，进一步重构了微徽章标题横幅、三级防疲劳灰度色彩、动态紧凑度因子（`element-spaciness`）及中英文（思源宋体 + Palatino）优雅混排机制。
+> 本项目参考并衍生自开源项目 [habaneraa/typst-resume-one-page](https://github.com/habaneraa/typst-resume-one-page)，在此对原作者表示诚挚感谢！本项目在此基础上针对现代技术岗位需求，进一步重构了标题横幅及中英文（思源宋体 + Palatino）字体。
 
 ---
 
@@ -88,37 +88,11 @@ typst compile --root . --font-path ./fonts examples/resume-zh.typ examples/resum
 ```
 
 
+## 其他问题
+- 确保电脑上已经下载了相关的字体
 
-## 优雅的中英文字体混排
 
-模板原生采用“**西文字体在前，中文字体在后**”的声明机制：
-- **英文字符与阿拉伯数字**：优先由优雅经典的衬线体 **Palatino**（`Palatino Linotype` / `Palatino`）渲染；
-- **中文字符**：Palatino 缺字时自动优雅回退至权威的开源衬线体 **思源宋体**（`Source Han Serif SC` / `Noto Serif SC`）。
-
-```typst
-#let (resume-header, resume-entry) = setup-styles(
-  font-family: ("Palatino Linotype", "Palatino", "Source Han Serif SC", "Noto Serif SC"),
-  // ... 其他配置
-)
-```
-
-本地编译时推荐携带 `--font-path ./fonts` 参数以确保字体加载完整。
-
----
-
-## 单页排版控行技巧
-
-在技术简历中，**严格卡在单页（不多 1 行也不空留大面积空白）** 是专业度的体现：
-
-1. **利用 `element-spaciness` 缩放**：
-   - 若出现文字溢出到第 2 页第一行：将 `element-spaciness` 设为 `0.96` 或 `0.94`；
-   - 若页面底部留白过多：将 `element-spaciness` 设为 `1.04` 或 `1.06`。
-2. **字号微调**：
-   - 默认基准字号为 `9.8pt ~ 10pt`，必要时可在 `9.5pt` 至 `10.2pt` 之间微调。
-3. **行距与段距自动自适应**：
-   - 内部已将 `par(leading: ...)` 与 `par(spacing: ...)` 绑定至 `element-spaciness`，全局间距协同缩放，避免局部挤压变形。
-
----
+> [!Info] 最后祝大家能够顺利找到工作！
 
 ## 开源协议
 
